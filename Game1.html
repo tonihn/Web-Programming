@@ -18,17 +18,17 @@
         <p id="message"></p>
     </div>
 
-    <!-- Popup für Namensabfrage bei Gewinn -->
+    <!-- Popup Name -->
     <div id="name-popup" class="popup hidden">
         <div class="popup-content">
-            <h2>Herzlichen Glückwunsch!</h2>
-            <p>Bitte gib deinen Namen für die Bestenliste ein:</p>
+            <h2>Congrats!</h2>
+            <p>Please enter your name for the leaderboard:</p>
             <input type="text" id="player-name" placeholder="Name eingeben">
-            <button onclick="confirmName()">Bestätigen</button>
+            <button onclick="confirmName()">Confirm</button>
         </div>
     </div>
 
-    <!-- Popup für das Spielende -->
+    <!-- Popup Gameend -->
     <div id="game-end-popup" class="popup hidden">
         <div class="popup-content">
             <h2 id="game-end-status"></h2>
@@ -39,7 +39,7 @@
         </div>
     </div>
 
-    <!-- Bestenliste -->
+    <!-- Leaderboard -->
     <div id="leaderboard">
         <h2>Bestenliste</h2>
         <ol id="score-list"></ol>
