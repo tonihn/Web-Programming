@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="css/Game1Css.css">
+</head>
+<body>
+    <button id="home-button" onclick="goHome()">🏠</button>
+    <div id="timer">⏱️ <span id="timer-value"></span></div>
+
+    <h1>Hangman</h1>
+    <div id="game-container">
+        <canvas id="hangman" width="200" height="200"></canvas>
+        <div id="word-container"></div>
+        <div id="keyboard"></div>
+        <p id="message"></p>
+    </div>
+
+    <!-- Popup für Namensabfrage bei Gewinn -->
+    <div id="name-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Herzlichen Glückwunsch!</h2>
+            <p>Bitte gib deinen Namen für die Bestenliste ein:</p>
+            <input type="text" id="player-name" placeholder="Name eingeben">
+            <button onclick="confirmName()">Bestätigen</button>
+        </div>
+    </div>
+
+    <!-- Popup für das Spielende -->
+    <div id="game-end-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2 id="game-end-status"></h2>
+            <div class="popup-buttons">
+                <button onclick="playAgain()">Play Again</button>
+                <button onclick="goHome()">Choose Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bestenliste -->
+    <div id="leaderboard">
+        <h2>Bestenliste</h2>
+        <ol id="score-list"></ol>
+        <button onclick="resetScoreboard()">Reset Scoreboard</button>
+    </div>
+
+    <script src="dist/Game1TS.js"></script>
+</body>
+</html>
