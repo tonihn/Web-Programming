@@ -4,5 +4,5 @@ function playGame(gameId: string): void {
     }
 }
 
-// Funktion global verfügbar machen
+// Make function globally available
 (window as any).playGame = playGame;
