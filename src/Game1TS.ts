@@ -1,4 +1,4 @@
-// Anzahl der Wörter, die von der API abgerufen werden sollen
+// Number of words to be retrieved from the API
 const wordCount: number = 1;
 const apiUrl: string = `https://random-word-api.herokuapp.com/word?number=${wordCount}`;
 
@@ -10,14 +10,14 @@ const maxWrongGuesses: number = 11;
 let startTime: number;
 let timerInterval: any;
 
-// Verknüpfe die HTML-Elemente
+// Link the HTML elements
 const wordContainer = document.getElementById('word-container') as HTMLDivElement;
 const keyboard = document.getElementById('keyboard') as HTMLDivElement;
 const message = document.getElementById('message') as HTMLDivElement;
 const hangmanCanvas = document.getElementById('hangman') as HTMLCanvasElement;
 const ctx = hangmanCanvas.getContext('2d') as CanvasRenderingContext2D;
 
-// Timer starten und in der oberen Ecke anzeigen
+// Start timer and display in the top corner
 function startTimer(): void {
     startTime = Date.now();
     timerInterval = setInterval(() => {
@@ -26,13 +26,13 @@ function startTimer(): void {
     }, 1000);
 }
 
-// Timer stoppen
+// Stop timer
 function stopTimer(): number {
     clearInterval(timerInterval);
     return Math.floor((Date.now() - startTime) / 1000);
 }
 
-// Erstelle die Tasten für die Buchstaben
+// Create the keys for the letters
 const alphabet: string[] = "abcdefghijklmnopqrstuvwxyz".split("");
 alphabet.forEach(letter => {
     const button = document.createElement("button");
@@ -42,7 +42,7 @@ alphabet.forEach(letter => {
     keyboard.appendChild(button);
 });
 
-// Funktion zum Abrufen des Wortes von der API
+// Function for retrieving the word from the API
 async function fetchWord(): Promise<void> {
     try {
         const response = await fetch(apiUrl);
@@ -56,14 +56,14 @@ async function fetchWord(): Promise<void> {
     }
 }
 
-// Zeige das Wort mit Platzhaltern an
+// Show the word with wildcards
 function displayWord(): void {
     wordContainer.innerHTML = chosenWord.split("").map(letter =>
         guessedLetters.includes(letter) ? letter : "_"
     ).join(" ");
 }
 
-// Verarbeite den Buchstabenversuch
+// Process the letter attempt
 function handleGuess(button: HTMLButtonElement, letter: string): void {
     if (guessedLetters.includes(letter)) return;
 
@@ -81,7 +81,7 @@ function handleGuess(button: HTMLButtonElement, letter: string): void {
     }
 }
 
-// Gewinn/Verlust prüfen und Namensabfrage bei Gewinn starten
+// Check win/loss and start name query in the event of a win
 function checkWin(): void {
     if (chosenWord.split("").every(letter => guessedLetters.includes(letter))) {
         stopTimer();
@@ -98,13 +98,13 @@ function checkLose(): void {
     }
 }
 
-// Popup für die Namensabfrage (nur bei Gewinn)
+// Pop-up for the name query (only if you win)
 function showNamePopup(): void {
     const popup = document.getElementById("name-popup")!;
     popup.classList.remove("hidden");
 }
 
-// Popup für Spielende anzeigen (ohne Namensabfrage)
+// Show popup for end of game (without name query)
 function showEndPopup(won: boolean): void {
     const popup = document.getElementById("game-end-popup")!;
     popup.classList.remove("hidden");
@@ -113,7 +113,7 @@ function showEndPopup(won: boolean): void {
     status.textContent = won ? "Yeah! You won!" : `Dadum. You lost. Das Wort war: ${chosenWord}`;
 }
 
-// Spielstand speichern, wenn der Name eingegeben wurde
+// Save score when the name has been entered
 function confirmName(): void {
     const playerName = (document.getElementById("player-name") as HTMLInputElement).value || "Unbekannt";
     const scoreTime = stopTimer();
@@ -128,7 +128,7 @@ function confirmName(): void {
     showEndPopup(true);
 }
 
-// Bestenliste anzeigen
+// Show leaderboard
 function displayLeaderboard(scores: { name: string, time: number }[] = JSON.parse(localStorage.getItem("hangmanScores") || "[]")): void {
     const scoreList = document.getElementById("score-list")!;
     scoreList.innerHTML = "";
@@ -139,23 +139,23 @@ function displayLeaderboard(scores: { name: string, time: number }[] = JSON.pars
     });
 }
 
-// Zurücksetzen der Bestenliste
+// Reset the leaderboard
 function resetScoreboard(): void {
     localStorage.removeItem("hangmanScores");
     displayLeaderboard();
 }
 
-// Zurück zur Startseite
+// Back to the homepage
 function goHome(): void {
     window.location.href = "Homepage.html";
 }
 
-// Spiel neu starten
+// Restart game
 function playAgain(): void {
     window.location.reload();
 }
 
-// Zeichne das Galgenmännchen
+// Draw the hangman
 function drawHangman(): void {
     switch (wrongGuesses) {
         case 1:
@@ -216,13 +216,13 @@ function drawHangman(): void {
     }
 }
 
-// Deaktiviere die Tasten nach Spielende
+// Deactivate the buttons at the end of the game
 function disableKeyboard(): void {
     const buttons = document.querySelectorAll('#keyboard button') as NodeListOf<HTMLButtonElement>;
     buttons.forEach(button => button.disabled = true);
 }
 
-// Initialisiere das Spiel und starte den Timer
+// Initialize the game and start the timer
 fetchWord();
 startTimer();
 displayLeaderboard();
