@@ -4,5 +4,5 @@ function playGame(gameId) {
         window.location.href = 'Game1.html';
     }
 }
-// Funktion global verfügbar machen
+// Make function globally available
 window.playGame = playGame;
