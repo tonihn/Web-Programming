@@ -43,7 +43,7 @@ h1 {
 
 #keyboard {
     display: grid;
-    grid-template-columns: repeat(9, 1fr); /* Gitter mit 9 gleichmäßigen Spalten */
+    grid-template-columns: repeat(9, 1fr); 
     gap: 10px;
     max-width: 400px;
     margin: 0 auto;
@@ -70,7 +70,7 @@ h1 {
 }
 
 #keyboard button:disabled,
-#keyboard button.used { /* Zusätzliche Klasse "used" für benutzte Tasten */
+#keyboard button.used { 
     background-color: #e2e8f0;
     color: #9ca3af;
     cursor: not-allowed;
@@ -94,7 +94,7 @@ h1 {
     cursor: pointer;
 }
 
-/* Timer in der oberen rechten Ecke */
+/* Timer in the right corner */
 #timer {
     position: absolute;
     top: 20px;
@@ -157,7 +157,7 @@ h1 {
     background-color: #2b6cb0;
 }
 
-/* Bestenliste Styles */
+/* Scoreboard Styles */
 #leaderboard {
     margin-top: 20px;
     text-align: center;
@@ -185,9 +185,9 @@ h1 {
     background-color: #c53030;
 }
 
-/* Breiteres Layout */
+/* Wider Layout */
 #game-container {
-    max-width: 700px; /* Breiteres Layout für längere Wörter */
+    max-width: 700px; 
     text-align: center;
     background-color: #ffffff;
     padding: 20px 40px;
