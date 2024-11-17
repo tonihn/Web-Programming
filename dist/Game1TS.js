@@ -123,7 +123,7 @@ var Game1;
     }
     Game1.resetScoreboard = resetScoreboard;
     function confirmName() {
-        const playerName = document.getElementById("player-name").value || "Unbekannt";
+        const playerName = document.getElementById("player-name").value || "Unknown";
         const scoreTime = stopTimer();
         const scores = JSON.parse(localStorage.getItem("hangmanScores") || "[]");
         scores.push({ name: playerName, time: scoreTime });
