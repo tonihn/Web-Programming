@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/Game1Css.css">
 </head>
 <body>
-    <button id="home-button" onclick="goHome()">🏠</button>
+    <button id="home-button" onclick="Game1.goHome()">🏠</button>
     <div id="timer">⏱️ <span id="timer-value"></span></div>
 
     <h1>Hangman</h1>
@@ -24,7 +24,7 @@
             <h2>Congrats!</h2>
             <p>Please enter your name for the leaderboard:</p>
             <input type="text" id="player-name" placeholder="Name eingeben">
-            <button onclick="confirmName()">Confirm</button>
+            <button onclick="Game1.confirmName()">Confirm</button>
         </div>
     </div>
 
@@ -33,8 +33,8 @@
         <div class="popup-content">
             <h2 id="game-end-status"></h2>
             <div class="popup-buttons">
-                <button onclick="playAgain()">Play Again</button>
-                <button onclick="goHome()">Choose Game</button>
+                <button onclick="Game1.playAgain()">Play Again</button>
+                <button onclick="Game1.goHome()">Choose Game</button>
             </div>
         </div>
     </div>
@@ -43,9 +43,14 @@
     <div id="leaderboard">
         <h2>Bestenliste</h2>
         <ol id="score-list"></ol>
-        <button onclick="resetScoreboard()">Reset Scoreboard</button>
+        <button onclick="Game1.resetScoreboard()">Reset Scoreboard</button>
     </div>
 
     <script src="dist/Game1TS.js"></script>
+    <script>
+        window.onload = () => {
+            Game1.startGame();
+        };
+    </script>
 </body>
 </html>
