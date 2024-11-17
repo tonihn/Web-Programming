@@ -4,8 +4,8 @@ The project was about creating a game page with two games. First we built "Hangm
 
 Antonia programmed the "Hangman". This includes the API for random words, as well as the hangman bars and the keyboard and everything else that goes with it (Javascript, CSS, HTML).
 Ole made the homepage where the games can be accessed as well as the "Snake".
-Together we designed and created the scoreboard functionality for both games in a pair programming approach.
-Ole also took care of the transpiling from TypeScript to JavaScript. This is done by using the "tsconfig.json" to compile the TypeScript files located in the "src"-folder into the JavaScript files located in the "dist"-folder (this is done by entering the "tsc" command into the terminal). This was added to benfit from the advantages of TypeScript and to reduce errors while simultaneously allowing the browser to execute the code without problems. Ole also created the scoreboard which saves entered data locally.
+Together we designed and created the scoreboard functionality for both games in a pair programming approach. It saves entered data locally.
+Ole also took care of the transpiling from TypeScript to JavaScript. This is done by using the "tsconfig.json" to compile the TypeScript files located in the "src"-folder into the JavaScript files located in the "dist"-folder (this is done by entering the "tsc" command into the terminal). This was added to benfit from the advantages of TypeScript and to reduce errors while simultaneously allowing the browser to execute the code without problems.
 To also integrate responsive design, we customized the CSS files with media labels. We used pixelsizes for mobile devices (<480px), for tablets (<768px) and for desktop devices (>768px).
 
 Antonia started the project with the hangman and the associated things and Ole then took her code and integrated his part into it.
