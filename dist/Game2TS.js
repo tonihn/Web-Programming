@@ -56,7 +56,7 @@ var Game2;
         popup.classList.remove("hidden");
     }
     function confirmName() {
-        const playerName = document.getElementById("player-name").value || "Unbekannt";
+        const playerName = document.getElementById("player-name").value || "Unknown";
         const scores = JSON.parse(localStorage.getItem("snakeScores") || "[]");
         scores.push({ name: playerName, score: score });
         scores.sort((a, b) => b.score - a.score);
@@ -75,7 +75,7 @@ var Game2;
         scoreList.innerHTML = "";
         scores.forEach((score, index) => {
             const listItem = document.createElement("li");
-            listItem.textContent = `${index + 1}. ${score.name} - ${score.score} Punkte`;
+            listItem.textContent = `${index + 1}. ${score.name} - ${score.score} Score`;
             scoreList.appendChild(listItem);
         });
     }

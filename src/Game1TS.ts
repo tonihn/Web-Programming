@@ -127,7 +127,7 @@ namespace Game1 {
     }
 
     export function confirmName(): void {
-        const playerName = (document.getElementById("player-name") as HTMLInputElement).value || "Unbekannt";
+        const playerName = (document.getElementById("player-name") as HTMLInputElement).value || "Unknown";
         const scoreTime = stopTimer();
 
         const scores = JSON.parse(localStorage.getItem("hangmanScores") || "[]");

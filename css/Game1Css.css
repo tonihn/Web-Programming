@@ -25,6 +25,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 100%;
+    margin-top: 60px;
 }
 
 #hangman {
@@ -85,7 +86,7 @@ h1 {
 }
 
 #home-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     font-size: 24px;
@@ -96,7 +97,7 @@ h1 {
 }
 
 #timer {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     font-size: 20px;
@@ -187,6 +188,79 @@ h1 {
 
 #leaderboard button:hover {
     background-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #game-container {
+        padding: 15px 20px;
+    }
+
+    #word-container {
+        font-size: 24px;
+    }
+
+    #score-display {
+        font-size: 1.2rem;
+    }
+
+    #keyboard button {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    #popup-content {
+        width: 90%;
+    }
+
+    #home-button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #game-container {
+        padding: 10px 15px;
+    }
+
+    #word-container {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+
+    #keyboard {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #keyboard button {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    #home-button {
+        font-size: 18px;
+    }
+
+    .popup-content {
+        padding: 20px 10px;
+        width: 95%;
+    }
+
+    .popup-content h2 {
+        font-size: 20px;
+    }
+
+    .popup-buttons button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
 
 @keyframes popupAnimation {

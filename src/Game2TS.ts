@@ -64,7 +64,7 @@ namespace Game2 {
     }
 
     export function confirmName(): void {
-        const playerName = (document.getElementById("player-name") as HTMLInputElement).value || "Unbekannt";
+        const playerName = (document.getElementById("player-name") as HTMLInputElement).value || "Unknown";
 
         const scores = JSON.parse(localStorage.getItem("snakeScores") || "[]");
         scores.push({ name: playerName, score: score });
@@ -86,7 +86,7 @@ namespace Game2 {
         scoreList.innerHTML = "";
         scores.forEach((score, index) => {
             const listItem = document.createElement("li");
-            listItem.textContent = `${index + 1}. ${score.name} - ${score.score} Punkte`;
+            listItem.textContent = `${index + 1}. ${score.name} - ${score.score} Score`;
             scoreList.appendChild(listItem);
         });
     }

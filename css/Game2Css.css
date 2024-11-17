@@ -11,7 +11,7 @@ body {
 }
 
 #home-button {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     font-size: 24px;
@@ -24,22 +24,33 @@ body {
 h1 {
     font-size: 3rem;
     margin-bottom: 10px;
+    color: #f3f4f6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #334155;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin-top: 60px;
 }
 
 #snake-game {
     border: 2px solid white;
     background-color: #0f172a;
+    margin-bottom: 20px;
 }
 
 #score-display {
     margin-top: 10px;
     font-size: 1.5rem;
+    color: #f3f4f6;
 }
 
 .popup {
@@ -60,23 +71,24 @@ h1 {
 }
 
 .popup-content {
-    background: #f8fafc;
+    background: #1e293b;
     padding: 30px 20px;
     border-radius: 8px;
     text-align: center;
     width: 320px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     animation: popupAnimation 0.3s ease;
+    color: #f3f4f6;
 }
 
 .popup-content h2 {
-    color: #4a5568;
+    color: #f3f4f6;
     margin-bottom: 10px;
     font-size: 24px;
 }
 
 .popup-content p {
-    color: #4a5568;
+    color: #f3f4f6;
     margin-bottom: 20px;
     font-size: 16px;
 }
@@ -96,48 +108,26 @@ h1 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.1s ease;
-    color: white;
-    background-color: #3182ce;
-    opacity: 1;
+    color: #f3f4f6;
+    background-color: #3b82f6;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .popup-buttons button:hover,
 .popup-content button:hover {
-    background-color: #2b6cb0;
+    background-color: #2563eb;
     transform: scale(1.05);
-}
-
-.popup-buttons button:first-child {
-    background-color: #3182ce;
-}
-
-.popup-buttons button:first-child:hover {
-    background-color: #2b6cb0;
-}
-
-.popup-buttons button:last-child {
-    background-color: #718096;
-}
-
-.popup-buttons button:last-child:hover {
-    background-color: #4a5568;
-}
-
-.popup-buttons button:disabled {
-    background-color: inherit;
-    color: inherit;
-    cursor: not-allowed;
-    opacity: 0.5;
 }
 
 .popup-buttons button:active {
     transform: scale(0.95);
 }
 
+/* Leaderboard */
 #leaderboard {
     margin-top: 20px;
     text-align: center;
+    color: #f3f4f6;
 }
 
 #score-list {
@@ -151,24 +141,83 @@ h1 {
     padding: 8px 15px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #e53e3e;
-    color: white;
+    background-color: #ef4444;
+    color: #f3f4f6;
     border: none;
     border-radius: 4px;
     transition: background-color 0.2s;
 }
 
 #leaderboard button:hover {
-    background-color: #c53030;
+    background-color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #game-container {
+        padding: 15px 20px;
+    }
+
+    #score-display {
+        font-size: 1.2rem;
+    }
+
+    #snake-game {
+        width: 90%;
+        height: auto;
+    }
+
+    #popup-content {
+        width: 90%;
+    }
+
+    #home-button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #game-container {
+        padding: 10px 15px;
+    }
+
+    #snake-game {
+        width: 100%;
+        height: auto;
+    }
+
+    #score-display {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    #home-button {
+        font-size: 18px;
+    }
+
+    .popup-content {
+        padding: 20px 10px;
+        width: 95%;
+    }
+
+    .popup-content h2 {
+        font-size: 20px;
+    }
+
+    .popup-buttons button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
 }
 
 @keyframes popupAnimation {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
