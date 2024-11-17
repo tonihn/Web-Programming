@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2016",               // Nutze eine neuere ECMAScript-Version
-    "module": "commonjs",
+    "target": "es2016",
+    "module": "none",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
-    "lib": ["dom", "es2016"]          // Fügt DOM und ES2016 Bibliotheken hinzu
+    "lib": ["dom", "es2016"],
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

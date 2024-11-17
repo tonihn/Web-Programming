@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="css/Game2Css.css">
+</head>
+<body>
+    <button id="home-button" onclick="Game2.goHome()">🏠</button>
+    <h1>Snake</h1>
+    <div id="game-container">
+        <canvas id="snake-game" width="400" height="400"></canvas>
+        <p id="score-display">Score: 0</p>
+    </div>
+
+    <!-- Popup Name -->
+    <div id="name-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>Game Over!</h2>
+            <p>Enter your name for the leaderboard:</p>
+            <input type="text" id="player-name" placeholder="Name eingeben">
+            <button onclick="Game2.confirmName()">Confirm</button>
+        </div>
+    </div>
+
+    <!-- Popup Gameend -->
+    <div id="game-end-popup" class="popup hidden">
+        <div class="popup-content">
+            <h2>What next?</h2>
+            <button onclick="Game2.playAgain()">Play Again</button>
+            <button onclick="Game2.goHome()">Choose Game</button>
+        </div>
+    </div>
+
+    <!-- Leaderboard -->
+    <div id="leaderboard">
+        <h2>Bestenliste</h2>
+        <ol id="score-list"></ol>
+        <button onclick="Game2.resetScoreboard()">Reset Scoreboard</button>
+    </div>
+
+    <script src="dist/Game2TS.js"></script>
+    <script>
+        window.onload = () => {
+            Game2.startGame();
+        };
+    </script>
+</body>
+</html>

@@ -5,38 +5,39 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f3f4f6;
+    background-color: #1e293b;
     margin: 0;
+    color: #f3f4f6;
 }
 
 h1 {
     font-size: 3rem;
-    color: #333;
+    color: #f3f4f6;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #game-container {
     text-align: center;
-    background-color: #ffffff;
+    background-color: #334155;
     padding: 20px 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 500px;
     width: 100%;
 }
 
 #hangman {
-    border: 1px solid #ddd;
+    border: 1px solid #475569;
     border-radius: 8px;
-    background-color: #f9fafb;
+    background-color: #1e293b;
     margin-bottom: 20px;
 }
 
 #word-container {
     font-size: 28px;
     letter-spacing: 10px;
-    color: #333;
+    color: #f3f4f6;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -52,26 +53,26 @@ h1 {
 #keyboard button {
     padding: 10px;
     font-size: 18px;
-    color: #333;
-    background-color: #e0e7ff;
-    border: 1px solid #cbd5e1;
+    color: #f3f4f6;
+    background-color: #475569;
+    border: 1px solid #64748b;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
 }
 
 #keyboard button:hover {
-    background-color: #a5b4fc;
+    background-color: #3b82f6;
 }
 
 #keyboard button:active {
     transform: scale(0.95);
-    background-color: #818cf8;
+    background-color: #2563eb;
 }
 
 #keyboard button:disabled,
 #keyboard button.used { 
-    background-color: #e2e8f0;
+    background-color: #475569;
     color: #9ca3af;
     cursor: not-allowed;
 }
@@ -83,7 +84,6 @@ h1 {
     font-weight: bold;
 }
 
-/* Home Button */
 #home-button {
     position: absolute;
     top: 20px;
@@ -91,19 +91,18 @@ h1 {
     font-size: 24px;
     background: transparent;
     border: none;
+    color: #f3f4f6;
     cursor: pointer;
 }
 
-/* Timer in the right corner */
 #timer {
     position: absolute;
     top: 20px;
     right: 20px;
     font-size: 20px;
-    color: #333;
+    color: #f3f4f6;
 }
 
-/* Popup Styles */
 .popup {
     position: fixed;
     top: 0;
@@ -121,17 +120,18 @@ h1 {
 }
 
 .popup-content {
-    background: #f8fafc;
+    background: #1e293b;
     padding: 30px 20px;
     border-radius: 8px;
     text-align: center;
     width: 320px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     animation: popupAnimation 0.3s ease;
+    color: #f3f4f6;
 }
 
 .popup-content h2 {
-    color: #4a5568;
+    color: #f3f4f6;
     margin-bottom: 10px;
     font-size: 24px;
 }
@@ -147,20 +147,24 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     border: none;
-    background-color: #3182ce;
-    color: white;
+    background-color: #3b82f6;
+    color: #f3f4f6;
     border-radius: 5px;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
 .popup-buttons button:hover {
-    background-color: #2b6cb0;
+    background-color: #2563eb;
 }
 
-/* Scoreboard Styles */
+.popup-buttons button:active {
+    transform: scale(0.95);
+}
+
 #leaderboard {
     margin-top: 20px;
     text-align: center;
+    color: #f3f4f6;
 }
 
 #score-list {
@@ -174,34 +178,15 @@ h1 {
     padding: 8px 15px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #e53e3e;
-    color: white;
+    background-color: #ef4444;
+    color: #f3f4f6;
     border: none;
     border-radius: 4px;
     transition: background-color 0.2s;
 }
 
 #leaderboard button:hover {
-    background-color: #c53030;
-}
-
-/* Wider Layout */
-#game-container {
-    max-width: 700px; 
-    text-align: center;
-    background-color: #ffffff;
-    padding: 20px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-#word-container {
-    font-size: 28px;
-    letter-spacing: 10px;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
+    background-color: #dc2626;
 }
 
 @keyframes popupAnimation {
